@@ -5,8 +5,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-12">
-      <h1>hello</h1>
+    <div class="col-12 m-5" *ngIf="moviesList.length>0">
+      <h1>Pelicuas</h1>
+      <app-peliculas-poster-grid [moviesList]="moviesList"></app-peliculas-poster-grid>
     </div>
   </div>
 </div>

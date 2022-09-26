@@ -1,18 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlideshowComponent } from './slideshow/slideshow.component';
+import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-poster-grid.component';
+
 
 
 
 @NgModule({
   declarations: [
-    SlideshowComponent
+    SlideshowComponent,
+    PeliculasPosterGridComponent,
   ],
   imports: [
     CommonModule
   ],
   exports:[
-    SlideshowComponent
+    SlideshowComponent,
+    PeliculasPosterGridComponent
   ]
 })
 export class ComponentsModule { }

@@ -1,5 +1,4 @@
 import { NgxPaginationModule } from 'ngx-pagination';
-import { SlideshowComponent } from './../components/slideshow/slideshow.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
