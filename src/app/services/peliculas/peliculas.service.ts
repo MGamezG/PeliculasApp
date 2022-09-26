@@ -12,4 +12,7 @@ export class PeliculasService {
   getMovies():Observable<CarteleraResponse>{
     return this.http.get<CarteleraResponse>(`https://api.themoviedb.org/3/movie/now_playing?api_key=402c75d67b34f271b9134f1d0c394948&language=es-ES&page=1`)
   }
+  getMovies2(page:number):Observable<CarteleraResponse>{
+    return this.http.get<CarteleraResponse>(`https://api.themoviedb.org/3/movie/now_playing?api_key=402c75d67b34f271b9134f1d0c394948&language=es-ES&page=${page}`)
+  }
 }

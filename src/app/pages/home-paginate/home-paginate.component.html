@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row" *ngIf="moviesList.length>0">
+    <div class="col-12">
+      <app-slideshow [movies]="moviesList"></app-slideshow>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <h1>hello</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p *ngFor="let item of moviesList | paginate: {itemsPerPage: itemsPerPage,currentPage: page,totalItems: totalItems}">
+      {{ item.title}}
+    </p>
+  </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <pagination-controls
+      class="pagi"
+      (pageChange)="gty((page = $event))">
+    </pagination-controls>
+    </div>
+  </div>
+

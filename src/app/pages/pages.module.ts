@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { SlideshowComponent } from './../components/slideshow/slideshow.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { PaliculaComponent } from './palicula/palicula.component';
 import { BuscarComponent } from './buscar/buscar.component';
 import { ComponentsModule } from '../components/components.module';
+import { HomePaginateComponent } from './home-paginate/home-paginate.component';
 
 
 
@@ -12,11 +14,13 @@ import { ComponentsModule } from '../components/components.module';
   declarations: [
     HomeComponent,
     PaliculaComponent,
-    BuscarComponent
+    BuscarComponent,
+    HomePaginateComponent
   ],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    NgxPaginationModule
   ]
 })
 export class PagesModule { }
