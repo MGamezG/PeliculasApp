@@ -9,11 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = '14_peliculasApp';
 
-  constructor(private peliculasService:PeliculasService){
-    peliculasService.getMovies().subscribe(
-      data=>{
-        console.log(data)
-      }
-    )
-  }
+  constructor(){}
 }
