@@ -11,21 +11,18 @@ import { Movie } from 'src/app/interfaces/cartelera-response';
 export class HomePaginateComponent implements OnInit {
 
   moviesList:Movie[]=[]
-  page=1;
-  itemsPerPage=20;
-  totalItems : any;
+
 
   constructor(private peliculasService:PeliculasService) {}
 
   ngOnInit(): void {
-    this.gty(this.page)
+    this.gty()
   }
-    gty(page:any){
-      this.peliculasService.getMovies2(page).subscribe(
+    gty(){
+      this.peliculasService.getMovies().subscribe(
         data=>{
           console.log(data)
           this.moviesList=data.results
-          this.totalItems=data.total_results
         }
       )
     }

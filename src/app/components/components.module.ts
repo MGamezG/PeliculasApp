@@ -1,7 +1,9 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-poster-grid.component';
+import { PeliculasPosterGridPaginationComponent } from './peliculas-poster-grid-pagination/peliculas-poster-grid-pagination.component';
 
 
 
@@ -10,13 +12,16 @@ import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-
   declarations: [
     SlideshowComponent,
     PeliculasPosterGridComponent,
+    PeliculasPosterGridPaginationComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgxPaginationModule
   ],
   exports:[
     SlideshowComponent,
-    PeliculasPosterGridComponent
+    PeliculasPosterGridComponent,
+    PeliculasPosterGridPaginationComponent,
   ]
 })
 export class ComponentsModule { }
