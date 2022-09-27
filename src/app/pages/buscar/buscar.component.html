@@ -1,1 +1,12 @@
-<p>buscar works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Peliculas: <small>{{busqueda}}</small> </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" *ngIf="moviesList.length>0">
+      <app-peliculas-poster-grid [moviesList]="moviesList"></app-peliculas-poster-grid>
+    </div>
+  </div>
+</div>
