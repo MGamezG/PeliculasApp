@@ -15,13 +15,16 @@ export class HomeComponent implements OnInit {
     const positionScroll=(document.documentElement.scrollTop||document.body.scrollTop)+1000;
     const maxPositionScroll=(document.documentElement.scrollHeight||document.body.scrollHeight)
     if (positionScroll>maxPositionScroll) {
+      if (this.peliculasService.charge) {
+        return ;
+      }
       this.peliculasService.getMovies().subscribe(
         response=>{
-          this.moviesList.push(...response.results)
+          this.moviesList.push(...response)
         }
       );
     }
-    console.log({positionScroll,maxPositionScroll})
+    //console.log({positionScroll,maxPositionScroll})
   }
 
   constructor(private peliculasService:PeliculasService) {
@@ -29,8 +32,8 @@ export class HomeComponent implements OnInit {
       data=>{
         //console.log(data)
         //console.log(data)
-        this.moviesSlice=data.results
-        this.moviesList=data.results
+        this.moviesSlice=data
+        this.moviesList=data
       }
     )
   }

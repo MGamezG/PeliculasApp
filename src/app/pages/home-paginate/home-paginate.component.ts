@@ -22,7 +22,7 @@ export class HomePaginateComponent implements OnInit {
       this.peliculasService.getMovies().subscribe(
         data=>{
           console.log(data)
-          this.moviesList=data.results
+          this.moviesList=data
         }
       )
     }
