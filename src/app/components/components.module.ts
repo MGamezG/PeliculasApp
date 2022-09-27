@@ -1,3 +1,4 @@
+import { PipesModule } from './../pipes/pipes.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,7 +19,8 @@ import { RatingModule } from 'ng-starrating';
   imports: [
     CommonModule,
     NgxPaginationModule,
-    RatingModule
+    RatingModule,
+    PipesModule
   ],
   exports:[
     SlideshowComponent,
