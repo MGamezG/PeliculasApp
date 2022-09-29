@@ -22,7 +22,7 @@ export class BuscarComponent implements OnInit {
         this.peliculasService.getsearch(params.text).subscribe(
           (data)=>{
             this.moviesList=data
-            console.log(data)
+           // console.log(data)
           }
         )
       }

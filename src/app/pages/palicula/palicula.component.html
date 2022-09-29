@@ -1,1 +1,40 @@
-<p>palicula works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <img
+        [src]="Movie.poster_path| poster"
+        [alt]="Movie?.title"
+        class="img-thumbnail"
+      />
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <h1>{{ Movie?.title }}</h1>
+      <div class="row">
+        <div class="col-6">
+          <star-rating
+            [value]="Movie.vote_average"
+            [totalstars]="10"
+            checkedcolor="green"
+            uncheckedcolor="grey"
+            size="14px"
+            [readonly]="false"
+          ></star-rating>
+        </div>
+        <div class="col-6">
+          <h3>{{ Movie?.vote_average | number:'1.1-2'}}</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <p>{{Movie.overview}}</p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-end">
+          <button class="btn btn-outline-info" (click)="onRegresar()">Regresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row"></div>
+</div>

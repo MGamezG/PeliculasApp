@@ -5,6 +5,7 @@ import { Injectable } from '@angular/core';
 import {map, Observable, of, tap}from 'rxjs'
 import { CarteleraResponse } from 'src/app/interfaces/cartelera-response';
 import{peliculaResponse}from 'src/app/interfaces/pelicula-response'
+import { MovieResponse } from 'src/app/interfaces/movieResponse';
 @Injectable({
   providedIn: 'root'
 })
@@ -50,13 +51,32 @@ export class PeliculasService {
   getMovies2(page:number):Observable<CarteleraResponse>{
     return this.http.get<CarteleraResponse>(`${this.baseUrl}/movie/now_playing?api_key=e48588d3c844b39f7314a620a6407d50&language=es-ES&page=${page}`)
   }
+
+  /**
+   * obtener la busqueda de peliculas
+   * @param text
+   * @returns
+   */
   getsearch(text:string):Observable<Movie[]>{
     const params={...this.params,page:1,query:text};
     return this.http.get<CarteleraResponse>(`${this.baseUrl}/search/movie`,{params}).pipe(
       map((resp:CarteleraResponse)=>resp.results)
     )
   }
+  /**
+   * resetear la pagina
+   */
   resetPage(){
     this.carteleraPage=1
+  }
+  /**
+   * obtener informacion de una pelicula en espesifico
+   * @param id de la pelicula
+   * @returns
+   */
+  getMovieDetail(id:string){
+    return this.http.get<MovieResponse>(`${this.baseUrl}/movie/${id}`,{
+      params:this.params
+    });
   }
 }

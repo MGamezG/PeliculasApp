@@ -20,7 +20,8 @@ import { RatingModule } from 'ng-starrating';
     CommonModule,
     NgxPaginationModule,
     RatingModule,
-    PipesModule
+    PipesModule,
+    RatingModule
   ],
   exports:[
     SlideshowComponent,

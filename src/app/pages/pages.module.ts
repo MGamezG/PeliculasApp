@@ -1,3 +1,5 @@
+import { RatingModule } from 'ng-starrating';
+import { PipesModule } from './../pipes/pipes.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -19,7 +21,9 @@ import { HomePaginateComponent } from './home-paginate/home-paginate.component';
   imports: [
     CommonModule,
     ComponentsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    PipesModule,
+    RatingModule
   ]
 })
 export class PagesModule { }
