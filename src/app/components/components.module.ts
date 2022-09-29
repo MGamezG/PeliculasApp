@@ -6,6 +6,7 @@ import { SlideshowComponent } from './slideshow/slideshow.component';
 import { PeliculasPosterGridComponent } from './peliculas-poster-grid/peliculas-poster-grid.component';
 import { PeliculasPosterGridPaginationComponent } from './peliculas-poster-grid-pagination/peliculas-poster-grid-pagination.component';
 import { RatingModule } from 'ng-starrating';
+import { CastSlideshowComponent } from './cast-slideshow/cast-slideshow.component';
 
 
 
@@ -15,6 +16,7 @@ import { RatingModule } from 'ng-starrating';
     SlideshowComponent,
     PeliculasPosterGridComponent,
     PeliculasPosterGridPaginationComponent,
+    CastSlideshowComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { RatingModule } from 'ng-starrating';
     SlideshowComponent,
     PeliculasPosterGridComponent,
     PeliculasPosterGridPaginationComponent,
+    CastSlideshowComponent
   ]
 })
 export class ComponentsModule { }

@@ -2,10 +2,11 @@ import { BuscarComponent } from './../../pages/buscar/buscar.component';
 import { Movie } from './../../interfaces/cartelera-response';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {map, Observable, of, tap}from 'rxjs'
+import {catchError, map, Observable, of, tap}from 'rxjs'
 import { CarteleraResponse } from 'src/app/interfaces/cartelera-response';
 import{peliculaResponse}from 'src/app/interfaces/pelicula-response'
 import { MovieResponse } from 'src/app/interfaces/movieResponse';
+import { Cast, CreditsResponse } from 'src/app/interfaces/creditsResponse';
 @Injectable({
   providedIn: 'root'
 })
@@ -77,6 +78,16 @@ export class PeliculasService {
   getMovieDetail(id:string){
     return this.http.get<MovieResponse>(`${this.baseUrl}/movie/${id}`,{
       params:this.params
-    });
+    }).pipe(
+      catchError(error=>of(null))
+    );
+  }
+  getCredits(id:string):Observable<Cast[]>{
+    return this.http.get<CreditsResponse>(`${this.baseUrl}/movie/${id}/credits`,{
+      params:this.params
+    }).pipe(
+      catchError(error=>of([])),
+      map((resp:any)=>resp.cast)
+    )
   }
 }

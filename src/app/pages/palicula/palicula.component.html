@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12">
       <img
-        [src]="Movie.poster_path| poster"
+        [src]="Movie?.poster_path| poster"
         [alt]="Movie?.title"
         class="img-thumbnail"
       />
@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-6">
           <star-rating
-            [value]="Movie.vote_average"
+            [value]="Movie?.vote_average"
             [totalstars]="10"
             checkedcolor="green"
             uncheckedcolor="grey"
@@ -26,7 +26,7 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <p>{{Movie.overview}}</p>
+          <p>{{Movie?.overview}}</p>
         </div>
       </div>
       <div class="row mt-3">
@@ -36,5 +36,9 @@
       </div>
     </div>
   </div>
-  <div class="row"></div>
+  <div class="row mt-5" *ngIf="cast?.length>0">
+    <div class="col-12">
+      <app-cast-slideshow [cast]="cast"></app-cast-slideshow>
+    </div>
+  </div>
 </div>
